@@ -1,0 +1,232 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    pdftitle={CV Michael Planu},
+    pdfauthor={Michael Planu}
+}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Michael Planu}
+% job title/career
+\cvjobtitle{\faGraduationCap Laureato in Informatica}
+
+%% optional information
+% profile picture
+\cvprofilepic{pics/profile.jpg}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{27 Agosto 1994}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Uta (CA), via Su Pixinali 64}
+% phone number
+\cvphone{+39 3409675287}
+% email address
+\cvmail{michael.planu@icloud.com}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+	
+    \profilesection{About Me}
+    \aboutme{Mi definisco un programmatore pragmatico [cit.]\\ Sono sempre stato una persona molto curiosa, tratto che mi porta ad avere conoscenze molto orizzontali ed essere sempre alla ricerca di miglioramenti, sia in ambito lavorativo che personale.  }
+	
+	\profilesection{Lingue Conosciute}
+	\pointskill{\flag{IT.png}}{Italiano}{5}
+	\pointskill{\flag{GB.png}}{Inglese (B2) }{3}
+	
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Social Network}
+		\begin{icontable}{2.5em}{1em}
+			\social{\faLinkedin}
+			    {https://www.linkedin.com/in/michael-planu}
+			    {Linkedin}
+			\social{\faGithub}
+				{https://github.com/ilMike42}
+				{Github}
+		\end{icontable}
+
+
+
+	\profilesection{Hobbies}
+	    \skill{\faMicrochip}{Elettronica e domotica}
+		\skill{\faGamepad}{Gaming}
+		\skill{\faTerminal}{Informatica}
+
+	\profilesection{Soft Skills}
+		\pointskill{\faUserFriends}{Lavoro in Team}{5}[5]
+			\skill[1.8em]{\faBriefcase}{Esperienza all'interno di un team in ambito aziendale}
+			\skill[1.8em]{\faGraduationCap}{Progetti universitari}
+		\pointskill{\faBrain}{Problem solving}{5}[5]
+}
+
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Esperienze lavorative}
+\begin{cvtable}[3]
+    \cvitem{2018 - Oggi}
+        {Sviluppatore mobile e web}
+        {Softfobia}
+        {Sviluppate e mantenute diverse app mobile e web, in progetti di diversa portata e per clienti di diverso tipo. In tali progetti ho avuto spesso modo di lavorare usando metodologia Agile, con comunicazioni costanti con il cliente.\\
+        In ambito mobile ho avuto modo di lavorare sia sui framework nativi di Android e iOS, sia sfruttando tecnologie ibride come Ionic o Flutter, cercando di mantenere sempre un occhio critico sui pattern architetturali più adatti al singolo caso.}
+\end{cvtable}
+
+
+\cvsection{Titoli di studio}
+\begin{cvtable}[2]
+	\cvitem{2015 - 2019}
+        {Laurea triennale in Informatica}
+        {Università degli Studi di Cagliari}
+        {Tesi relativa all'ambito della sentiment analysis.\\ Correlazione fra il sentiment dell'utenza di Stocktwits, ottenuto dall'analisi dei twit, e l'effettivo andamento dell'indice SP500.}
+    \cvitem{2014}
+        {Diploma di Perito tecnico, specializzazione Informatica}
+        {ITIS Giua}
+        {\\}
+\end{cvtable}
+
+\cvsection{Competenze Informatiche}
+\begin{cvtable}[2.5]
+    \cvitem{\texttt{UIKit\\ SwiftUI}}
+        {App iOS}
+        {}
+        {Sviluppo e manutenzione app, implementazione di librerie, framework e SDK. Buona conoscenza dei più famosi pattern architetturali, di UIKit e SwiftUI, e di Combine.}
+        
+    \cvitem{\texttt{Flutter\\ Dart}}
+        {Frontend mobile app}
+        {}
+        {Partecipato al programma di formazione interno ``mobile academy'' sullo sviluppo di app mobile basate su Flutter. Conoscenza di base del pattern Provider/Riverpod.}
+
+    \cvitem{\texttt{Angular\\ Ionic\\HTML5+CSS3}} % TODO: aggiungere frontend mobile
+        {Frontend mobile/web}
+        {}
+        {Tecnologie utilizzate su più progetti per la creazione e la manutenzione di app web e mobile, utilizzando anche diversi plugin di terze parti.}
+    
+        \cvitem{\texttt{Java\\ Kotlin}}
+        {App Android}
+        {}
+        {Sviluppo e manutenzione app, implementazione di librerie, framework e SDK.}
+    
+    \cvitem{\texttt{Python}}
+        {Script per raccolta e analisi dati inerenti la tesi di laurea, progetti personali}
+        {}
+        {Analisi e rappresentazione di dati basati su twit finanziari, raccolti tramite API dal sito StockTwits. Linguaggio usato anche per creare bot su Telegram e altri side-project.}
+    
+    \cvitem{\texttt{PHP}}
+        {Gestione siti web}
+        {}
+        {A livello professionale: sviluppo e manutenzione di progetti basati su Drupal.\\Utilizzato anche durante la carriera scolastica e universitaria.}
+    
+    \cvitem{\texttt{C\# + Unity}}
+        {Esame di Video Game Design}
+        {}
+        {Sviluppato, in team, un puzzle game 3D in prima persona, basato sulla sopravvivenza e la risoluzione di enigmi per avanzare di livello.}
+    
+    \cvitem{Altri}
+        {Rust, C, C++, YAML, LaTex}
+        {}
+        {Linguaggi utilizzati al fine di superare vari esami, progetti personali o la stesura di questo Curriculum Vitae: conoscenze di base.}
+\end{cvtable}
+
+\cvsignature
+
+\let\thefootnote\relax\footnotetext{Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base all’art. 13 del D. Lgs. 196/2003 e all’art. 13 GDPR 679/16.}
+
+\end{document}
