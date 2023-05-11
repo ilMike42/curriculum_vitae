@@ -29,8 +29,8 @@ jobs:
 
       - name: Rename template file
         run: mv template.pdf curriculum.pdf
-        
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: template.pdf
+          files: curriculum.pdf
