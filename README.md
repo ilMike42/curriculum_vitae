@@ -1,3 +1,3 @@
-Curriculum personale basato su Forty Seconds CV.
+Personal curriculum based on Forty Seconds CV.
 
-[Link al progetto originale](https://github.com/PandaScience/FortySecondsCV)
+[Original project repository](https://github.com/PandaScience/FortySecondsCV)
